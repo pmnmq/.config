@@ -17,7 +17,11 @@ set shiftwidth=4
 set enc=utf-8 " 文件编码
 set fencs=utf-8,ucs-bom,shift-jis,gbk
 set ruler " 打开状态栏标尺
-
+" 取消自动备份及产生swp文件
+set nobackup
+set nowb
+set noswapfile
+syntax enable
 
 call plug#begin('~/.vim/plugged')
 " 文件侧偏栏
@@ -41,11 +45,12 @@ Plug 'preservim/nerdcommenter'
 " 语法检查插件
 Plug 'dense-analysis/ale'
 
-" 注释插件
-Plug 'preservim/nerdcommenter'
-
 " 语法高亮插件
 Plug 'tomlion/vim-solidity'
+
+" 主题
+Plug 'morhetz/gruvbox'
+
 call plug#end()
 
 
@@ -103,5 +108,11 @@ let g:NERDTrimTrailingWhitespace = 1
 
 " Enable NERDCommenterToggle to check all selected lines is commented or not 
 let g:NERDToggleCheckAllLines = 1
+" 使用Ctrl + /来注释
+nmap <C-_>   <Plug>NERDCommenterToggle
+vmap <C-_>   <Plug>NERDCommenterToggle<CR>gv
 
 
+" 主题设置
+" set background=dark
+colorscheme gruvbox
