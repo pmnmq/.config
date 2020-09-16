@@ -17,10 +17,20 @@ set ruler " 打开状态栏标尺
 
 syntax on
 call plug#begin('~/.vim/plugged')
-Plug 'scrooloose/nerdtree' " 文件侧偏栏
-" Plug 'vim-airline/vim-airline' " 状态栏显示文件信息
-Plug 'jiangmiao/auto-pairs' " 自动补全括号 引号等
+" 文件侧偏栏
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+" 状态栏显示文件信息
+Plug 'vim-airline/vim-airline'
+" 自动补全括号 引号等
+Plug 'jiangmiao/auto-pairs'
+" 补全插件
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'fatih/vim-go', {'tag': '*'}
+
+Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
+" 改变vim开始界面
 Plug 'mhinz/vim-startify'
+" 彩虹括号
+Plug 'luochen1990/rainbow'
+Plug 'vim-python/python-syntax'
 call plug#end()
