@@ -5,3 +5,5 @@
 ```bash
 export ZSH="/root/.oh-my-zsh"
 ```
+
+## env.zsh文件不用修改位置但是需要注意环境的文件路径

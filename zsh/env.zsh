@@ -11,7 +11,7 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python36
 export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/python36/bin/virtualenv
 
 # hadoop
-export HADOOP_HOME=/usr/local/hadoop-3.1.3
+export HADOOP_HOME=/usr/local/hadoop
 export PATH=$HADOOP_HOME/bin:$PATH
 
 # jdk8
