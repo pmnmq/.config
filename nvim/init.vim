@@ -20,7 +20,11 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 	silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 		autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
-" nvim基础设置
+
+
+
+" ------------------------nvim设置------------------------
+
 set showmatch " 显示匹配括号
 set number
 set cursorline " 突出显示当前行
@@ -38,11 +42,16 @@ set noswapfile
 syntax enable
 
 
+" ------------------------nvim光标设置------------------------
+
 if has("autocmd")
     au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
     au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
     au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
 endif
+
+
+" ------------------------nvim插件------------------------
 
 call plug#begin('~/.vim/plugged')
 " 文件侧偏栏
@@ -72,10 +81,15 @@ Plug 'tomlion/vim-solidity'
 " 主题
 Plug 'morhetz/gruvbox'
 
+" 代码片段
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
 call plug#end()
 
 
-" 彩虹括号插件设置
+" ------------------------彩虹括号插件配置------------------------
+
 let g:rainbow_conf = {
 	\	'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
 	\	'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
@@ -101,11 +115,14 @@ let g:rainbow_conf = {
 let g:rainbow_active = 1
 
 
+" ------------------------文件树设置------------------------
+
 " Ctrl + n 开启文件树
 map <C-n> :NERDTreeToggle<CR>
 
 
-" 注释插件配置
+" ------------------------注释插件配置------------------------
+
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 
@@ -134,12 +151,14 @@ nmap <C-_>   <Plug>NERDCommenterToggle
 vmap <C-_>   <Plug>NERDCommenterToggle<CR>gv
 
 
-" 主题设置
+" ------------------------主题设置------------------------
+
 " set background=dark
 colorscheme gruvbox
 
 
-" coc-nvim设置
+" ------------------------coc-nvim设置------------------------
+
 " TextEdit might fail if hidden is not set.
 set hidden
 
@@ -293,3 +312,18 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+
+" ------------------------代码片段插件设置------------------------
+
+" 唤出补全代码片段
+let g:UltiSnipsExpandTrigger="<c-e>"
+" 切换到下一个需要修改的变量名
+let g:UltiSnipsJumpForwardTrigger="<c-e>"
+" 切换到上一个需要修改的变量名 
+let g:UltiSnipsJumpBackwardTrigger="<c-n>"
+" 自定义代码片段的位置
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/UltiSnips']
+
+
+
