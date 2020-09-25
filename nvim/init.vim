@@ -40,6 +40,7 @@ set nobackup
 set nowb
 set noswapfile
 syntax enable
+nnoremap <c-q> :q <CR>
 
 
 " ------------------------nvim光标设置------------------------
@@ -326,4 +327,15 @@ let g:UltiSnipsJumpBackwardTrigger="<c-n>"
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/UltiSnips']
 
 
+" ------------------------在nvim中运行python程序------------------------
+
+nnoremap <A-r> :call CompileRunPython() <CR>
+func! CompileRunPython()
+	exec "w"
+	if &filetype == "python"
+		set splitbelow
+		:sp
+		:term python38 %
+	endif
+endfunc
 
