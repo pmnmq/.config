@@ -20,13 +20,13 @@
 
 - [UltiSnips](./nvim/UltiSnips)文件夹中放置的是我添加的ultisnips(vim代码片段插件)代码片段
 
-## tmxu
+## tmux
 
-- 这个文件夹中放置的是tmxu的懒人配置
+- 这个文件夹中放置的是tmux的懒人配置
 
 	```bash
-	ln -s -f ~/.config/tmux/tmxu.conf ~/.tmux.conf
-	ln -s -f ~/.config/tmux/tmxu.conf.local ~/.tmux.conf.local
+	ln -s -f ~/.config/tmux/tmux.conf ~/.tmux.conf
+	ln -s -f ~/.config/tmux/tmux.conf.local ~/.tmux.conf.local
 	```
 
 ## zsh
@@ -36,7 +36,7 @@
 	```bash
 	ln -s -f ~/.config/zsh/zshrc ~/.zshrc
 	```
-- [env.zsh](./zsh/env.zsh)中配置信息为我的软件的环境变量
+- [env.zsh](./zsh/env.zsh)中配置的是我的软件环境变量，只需要`source` .zshrc即可
 
 ## ranger
 
