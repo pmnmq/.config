@@ -21,3 +21,6 @@ export CLASSPATH=$JAVA_HOME/lib:$JRE_HOME/lib
 export PATH=$JAVA_HOME/bin:$PATH
 
 export GIT_TERMINAL_PROMPT=1
+
+# zplug
+export ZPLUG_HOME=~/.zplug

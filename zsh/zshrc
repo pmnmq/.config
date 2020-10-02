@@ -4,14 +4,11 @@ export ZSH="/root/.oh-my-zsh"
 # ZSH_THEME="robbyrussell"
 ZSH_THEME="avit"
 
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git extract)
 
 
 source $ZSH/oh-my-zsh.sh
-
+source ~/.config/zsh/ln.zsh
 source ~/.config/zsh/env.zsh
 source /usr/local/python36/bin/virtualenvwrapper.sh
-
-ln -s -f ~/.config/tmux/tmxu.conf ~/.tmux.conf
-ln -s -f ~/.config/tmux/tmxu.conf.local ~/.tmux.conf.local
-
+source ~/.config/zsh/plugins.zsh
