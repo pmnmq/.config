@@ -1,5 +1,6 @@
 "return" 2>&- || "exit"
 
+
 "────────────────────────────────────────────────────────────────────────
 " ─██████████████─██████──██████─────────██████─██████████─██████████████─
 " ─██░░░░░░░░░░██─██░░██──██░░██─────────██░░██─██░░░░░░██─██░░░░░░░░░░██─
@@ -41,15 +42,25 @@ set nobackup
 set nowb
 set noswapfile
 syntax enable
+
+
+" ------------------------键位映射------------------------
+
+" 将Ctrl+q设置为退出
 nnoremap <c-q> :q <CR>
+
+" 将向下插入行并进入编辑模式映射为shift+enter
+nmap <CR> o
+nmap <S-CR> o<CR>
+
 
 
 " ------------------------nvim光标设置------------------------
-
+" 在插入模式下将光标设置为细条
 if has("autocmd")
     au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
     au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
-    au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
+    au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam" 
 endif
 
 
@@ -88,6 +99,9 @@ Plug 'chowie/vim-hybrid-reverse'
 " 代码片段
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+
+" 在当前单词显示下划线
+Plug 'itchyny/vim-cursorword'
 
 call plug#end()
 
@@ -341,4 +355,3 @@ func! CompileRunPython()
 		:term python38 %
 	endif
 endfunc
-
