@@ -82,6 +82,8 @@ Plug 'tomlion/vim-solidity'
 
 " 主题
 Plug 'morhetz/gruvbox'
+Plug 'chowie/vim-hybrid-reverse'
+
 
 " 代码片段
 Plug 'SirVer/ultisnips'
@@ -155,7 +157,7 @@ vmap <C-_>   <Plug>NERDCommenterToggle<CR>gv
 
 " ------------------------主题设置------------------------
 
-" set background=dark
+set background=dark
 colorscheme gruvbox
 
 
@@ -329,7 +331,7 @@ let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/UltiSnips']
 
 
 " ------------------------在nvim中运行python程序------------------------
-
+" 这里指定了Python的版本为3.8
 nnoremap <A-r> :call CompileRunPython() <CR>
 func! CompileRunPython()
 	exec "w"
