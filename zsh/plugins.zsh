@@ -1,4 +1,3 @@
-
 if [[ ! -d "~/.zplug" ]]; then
 	git clone https://github.com/zplug/zplug ~/.zplug
 fi
@@ -19,4 +18,4 @@ if ! zplug check --verbose; then
 	fi
 fi
 
-zplug load --verbose
+zplug load

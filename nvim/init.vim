@@ -95,6 +95,9 @@ Plug 'tomlion/vim-solidity'
 Plug 'morhetz/gruvbox'
 Plug 'chowie/vim-hybrid-reverse'
 
+" 格式化插件
+Plug 'Chiel92/vim-autoformat'
+
 
 " 代码片段
 Plug 'SirVer/ultisnips'
