@@ -24,3 +24,6 @@ export GIT_TERMINAL_PROMPT=1
 
 # zplug
 export ZPLUG_HOME=~/.zplug
+
+# ranger
+export RANGER_LOAD_DEFAULT_RC=FALSE

@@ -1,2 +1,4 @@
 configstore/
 coc/
+ranger/plugins/__pycache__/
+ranger/plugins/ranger_devicons/__pycache__
