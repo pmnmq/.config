@@ -17,7 +17,7 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 
-" ------------------------nvim设置------------------------
+" ------------------------nvim基本设置------------------------
 " 键位映射
 let mapleader=" "
 noremap j h
@@ -56,8 +56,11 @@ set scrolloff=8
 syntax on
 set wrap
 set showcmd
-
-
+let &t_ut=''
+set list
+set listchars=tab:\|\ ,trail:▫
+set backspace=indent,eol,start
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 " ------------------------nvim光标设置------------------------
 " 在插入模式下将光标设置为细条
@@ -86,14 +89,14 @@ Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 Plug 'mhinz/vim-startify'
 " 彩虹括号
 Plug 'luochen1990/rainbow'
-Plug 'vim-python/python-syntax'
+" Plug 'vim-python/python-syntax'
 " 注释插件
 Plug 'preservim/nerdcommenter'
 " 语法检查插件
 Plug 'dense-analysis/ale'
 
 " 语法高亮插件
-Plug 'tomlion/vim-solidity'
+" Plug 'tomlion/vim-solidity'
 
 " 主题
 Plug 'morhetz/gruvbox'
@@ -103,7 +106,9 @@ Plug 'ajmwagar/vim-deus'
 
 " 格式化插件
 Plug 'Chiel92/vim-autoformat'
+Plug 'Vimjas/vim-python-pep8-indent', { 'for' :['python', 'vim-plug'] }
 
+Plug 'nathanaelkane/vim-indent-guides'
 
 " 代码片段
 Plug 'SirVer/ultisnips'
@@ -112,7 +117,12 @@ Plug 'honza/vim-snippets'
 " 在当前单词显示下划线
 Plug 'itchyny/vim-cursorword'
 
+Plug 'hdima/python-syntax'
+
 call plug#end()
+
+
+" let python_highlight_all = 1
 
 
 " ------------------------彩虹括号插件配置------------------------
@@ -360,15 +370,30 @@ let g:UltiSnipsJumpBackwardTrigger="<c-n>"
 " 自定义代码片段的位置
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/UltiSnips']
 
+" -----------------------vim-python-pep8-indent-------------------------
+let g:pymode_indent = 0
+
+
+" ------------------------vim-indent-guides------------------------
+
+let g:indent_guides_guide_size = 1
+let g:indent_guides_start_level = 2
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_color_change_precent = 1
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
+
+
 
 " ------------------------在nvim中运行python程序------------------------
 " 这里指定了Python的版本为3.8
 nnoremap <A-r> :call CompileRunPython() <CR>
 func! CompileRunPython()
-	exec "w"
-	if &filetype == "python"
-		set splitbelow
-		:sp
-		:term python38 %
-	endif
+ exec "w"
+ if &filetype == "python"
+   set splitbelow
+   :sp
+   :term python38 %
+ endif
 endfunc
