@@ -1,19 +1,12 @@
 "return" 2>&- || "exit"
 
 
-"────────────────────────────────────────────────────────────────────────
-" ─██████████████─██████──██████─────────██████─██████████─██████████████─
-" ─██░░░░░░░░░░██─██░░██──██░░██─────────██░░██─██░░░░░░██─██░░░░░░░░░░██─
-" ─██░░██████░░██─██░░██──██░░██─────────██░░██─████░░████─██░░██████████─
-" ─██░░██──██░░██─██░░██──██░░██─────────██░░██───██░░██───██░░██─────────
-" ─██░░██████░░██─██░░██──██░░██─────────██░░██───██░░██───██░░██─────────
-" ─██░░░░░░░░░░██─██░░██──██░░██─────────██░░██───██░░██───██░░██─────────
-" ─██░░██████████─██░░██──██░░██─██████──██░░██───██░░██───██░░██─────────
-" ─██░░██─────────██░░██──██░░██─██░░██──██░░██───██░░██───██░░██─────────
-" ─██░░██─────────██░░██████░░██─██░░██████░░██─████░░████─██░░██████████─
-" ─██░░██─────────██░░░░░░░░░░██─██░░░░░░░░░░██─██░░░░░░██─██░░░░░░░░░░██─
-" ─██████─────────██████████████─██████████████─██████████─██████████████─
-" ────────────────────────────────────────────────────────────────────────
+"               _ _      _
+"  _ __  _   _ (_|_) ___| |__  _   _ _ __
+" | '_ \| | | || | |/ __| '_ \| | | | '_ \
+" | |_) | |_| || | | (__| | | | |_| | | | |
+" | .__/ \__,_|/ |_|\___|_| |_|\__,_|_| |_|
+" |_|        |__/
 
 " Author: @pujichun
 
@@ -24,9 +17,27 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 
-
 " ------------------------nvim设置------------------------
+" 键位映射
+let mapleader=" "
+noremap j h
+noremap i k
+noremap k j
+noremap h i
+noremap H I
+noremap I 5k
+noremap L 5j
+noremap <LEADER><CR> :nohlsearch<CR>
+map s <nop>
+map S :w<CR>
+map Q :q<CR>
+map R :source $MYVIMRC<CR>
 
+" 搜索设置
+set hlsearch
+exec "nohlsearch"
+set ignorecase
+set smartcase
 set showmatch " 显示匹配括号
 set number
 set cursorline " 突出显示当前行
@@ -41,17 +52,10 @@ set ruler " 打开状态栏标尺
 set nobackup
 set nowb
 set noswapfile
-syntax enable
-
-
-" ------------------------键位映射------------------------
-
-" 将Ctrl+q设置为退出
-nnoremap <c-q> :q <CR>
-
-" 将向下插入行并进入编辑模式映射为shift+enter
-nmap <CR> o
-nmap <S-CR> o<CR>
+set scrolloff=8
+syntax on
+set wrap
+set showcmd
 
 
 
@@ -93,7 +97,9 @@ Plug 'tomlion/vim-solidity'
 
 " 主题
 Plug 'morhetz/gruvbox'
+Plug 'connorholyday/vim-snazzy'
 Plug 'chowie/vim-hybrid-reverse'
+Plug 'ajmwagar/vim-deus'
 
 " 格式化插件
 Plug 'Chiel92/vim-autoformat'
@@ -175,7 +181,15 @@ vmap <C-_>   <Plug>NERDCommenterToggle<CR>gv
 " ------------------------主题设置------------------------
 
 set background=dark
-colorscheme gruvbox
+colorscheme deus
+" deus主题设置
+set t_Co=256
+set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+set background=dark    " Setting dark mode
+colorscheme deus
+let g:deus_termcolors=256
 
 
 " ------------------------coc-nvim设置------------------------
