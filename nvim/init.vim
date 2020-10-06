@@ -399,12 +399,44 @@ let g:pymode_indent = 0
 
 " ------------------------在nvim中运行python程序------------------------
 " 这里指定了Python的版本为3.8
-nnoremap <A-r> :call CompileRunPython() <CR>
-func! CompileRunPython()
- exec "w"
- if &filetype == "python"
-   set splitbelow
-   :sp
-   :term python38 %
- endif
+nnoremap r :call CompileRun()<CR>
+func! CompileRun()
+	exec "w"
+	if &filetype == 'c'
+		exec "!g++ % -o %<"
+		exec "!time ./%<"
+	elseif &filetype == 'cpp'
+		set splitbelow
+		exec "!g++ -std=c++11 % -Wall -o %<"
+		:sp
+		:res -15
+		:term ./%<
+	elseif &filetype == 'java'
+		exec "!javac %"
+		exec "!time java %<"
+	elseif &filetype == 'sh'
+		:!time bash %
+	elseif &filetype == 'python'
+		set splitbelow
+		:sp
+		:term python3 %
+	elseif &filetype == 'html'
+		silent! exec "!".g:mkdp_browser." % &"
+	elseif &filetype == 'markdown'
+		exec "InstantMarkdownPreview"
+	elseif &filetype == 'tex'
+		silent! exec "VimtexStop"
+		silent! exec "VimtexCompile"
+	elseif &filetype == 'dart'
+		exec "CocCommand flutter.run -d ".g:flutter_default_device
+		silent! exec "CocCommand flutter.dev.openDevLog"
+	elseif &filetype == 'javascript'
+		set splitbelow
+		:sp
+		:term export DEBUG="INFO,ERROR,WARNING"; node --trace-warnings .
+	elseif &filetype == 'go'
+		set splitbelow
+		:sp
+		:term go run .
+	endif
 endfunc
