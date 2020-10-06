@@ -108,7 +108,7 @@ Plug 'ajmwagar/vim-deus'
 Plug 'Chiel92/vim-autoformat'
 Plug 'Vimjas/vim-python-pep8-indent', { 'for' :['python', 'vim-plug'] }
 
-Plug 'nathanaelkane/vim-indent-guides'
+" Plug 'nathanaelkane/vim-indent-guides'
 
 " 代码片段
 Plug 'SirVer/ultisnips'
@@ -122,7 +122,18 @@ Plug 'hdima/python-syntax'
 call plug#end()
 
 
-" let python_highlight_all = 1
+" ------------------------彩虹括号插件配置------------------------
+let g:coc_global_extensions = [
+	\ 'coc-gitignore',
+	\ 'coc-html',
+	\ 'coc-json',
+	\ 'coc-lists',
+	\ 'coc-pyright',
+	\ 'coc-python',
+	\ 'coc-snippets',
+	\ 'coc-sh',
+	\ 'coc-java',]
+
 
 
 " ------------------------彩虹括号插件配置------------------------
@@ -376,13 +387,13 @@ let g:pymode_indent = 0
 
 " ------------------------vim-indent-guides------------------------
 
-let g:indent_guides_guide_size = 1
-let g:indent_guides_start_level = 2
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_color_change_precent = 1
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
+" let g:indent_guides_guide_size = 1
+" let g:indent_guides_start_level = 2
+" let g:indent_guides_enable_on_vim_startup = 1
+" let g:indent_guides_color_change_precent = 1
+" let g:indent_guides_auto_colors = 0
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
 
 
 
