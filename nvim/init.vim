@@ -16,6 +16,7 @@ endif
 
 " ------------------------nvim基本设置------------------------
 " 键位映射
+" 设置LEADER键为space
 let mapleader=" "
 noremap j h
 noremap i k
@@ -162,8 +163,8 @@ let g:rainbow_active = 1
 
 " ------------------------文件树设置------------------------
 
-" Ctrl + n 开启文件树
-map <C-n> :NERDTreeToggle<CR>
+" space + n 开启文件树
+map <LEADER>t :NERDTreeToggle<CR>
 
 
 " ------------------------注释插件配置------------------------
@@ -370,11 +371,11 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 " ------------------------代码片段插件设置------------------------
 
 " 唤出补全代码片段
-let g:UltiSnipsExpandTrigger="<c-e>"
+let g:UltiSnipsExpandTrigger="<c-n>"
 " 切换到下一个需要修改的变量名
-let g:UltiSnipsJumpForwardTrigger="<c-e>"
+let g:UltiSnipsJumpForwardTrigger="<c-n>"
 " 切换到上一个需要修改的变量名 
-let g:UltiSnipsJumpBackwardTrigger="<c-n>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 " 自定义代码片段的位置
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/UltiSnips']
 
@@ -393,9 +394,14 @@ let g:pymode_indent = 0
 " autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
 
 
+" ------------------------go导入包------------------------
 
-" ------------------------在nvim中运行python程序------------------------
-" 这里指定了Python的版本为3.8
+" 按大M执行GoImports命令
+nnoremap M :GoImports<CR>
+
+
+" ------------------------运行代码设置------------------------
+
 nnoremap r :call CompileRun()<CR>
 func! CompileRun()
 	exec "w"
