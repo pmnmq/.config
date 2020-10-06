@@ -1,6 +1,3 @@
-"return" 2>&- || "exit"
-
-
 "               _ _      _
 "  _ __  _   _ (_|_) ___| |__  _   _ _ __
 " | '_ \| | | || | |/ __| '_ \| | | | '_ \
@@ -12,7 +9,7 @@
 
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
 	silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-				\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+				\https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
