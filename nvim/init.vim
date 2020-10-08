@@ -368,14 +368,15 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 
+
 " ------------------------代码片段插件设置------------------------
 
 " 唤出补全代码片段
-let g:UltiSnipsExpandTrigger="<c-n>"
+let g:UltiSnipsExpandTrigger="<c-b>"
 " 切换到下一个需要修改的变量名
-let g:UltiSnipsJumpForwardTrigger="<c-n>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
 " 切换到上一个需要修改的变量名 
-let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " 自定义代码片段的位置
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/UltiSnips']
 
