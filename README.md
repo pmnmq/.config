@@ -4,6 +4,10 @@
 
 下面是各个文件说明
 
+## alacritty
+
+- alacritty中的[alacritty.yml](./alacritty/alacritty.yml)是alacritty的配置文件
+
 ## neofetch
 
 - neofetch中的[config.conf](./neofetch/config.conf)是neofetch的配置文件，该配置文件能控制终端中使用neofetch后输出信息
