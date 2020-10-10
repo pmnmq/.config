@@ -117,6 +117,9 @@ Plug 'itchyny/vim-cursorword'
 
 Plug 'hdima/python-syntax'
 
+" 翻译插件
+Plug 'voldikss/vim-translator'
+
 call plug#end()
 
 
@@ -393,6 +396,18 @@ let g:pymode_indent = 0
 " let g:indent_guides_auto_colors = 0
 " autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
 " autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
+
+
+" ------------------------翻译插件------------------------
+" <Leader>t 翻译光标下的文本，在命令行回显
+" nmap <silent> <Leader>t <Plug>Translate
+" vmap <silent> <Leader>t <Plug>TranslateV
+" Leader>w 翻译光标下的文本，在窗口中显示
+nmap <silent> <Leader>w <Plug>TranslateW
+vmap <silent> <Leader>w <Plug>TranslateWV
+" Leader>r 替换光标下的文本为翻译内容
+nmap <silent> <Leader>r <Plug>TranslateR
+vmap <silent> <Leader>r <Plug>TranslateRV
 
 
 " ------------------------go导入包------------------------
