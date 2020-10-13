@@ -27,3 +27,7 @@ export ZPLUG_HOME=~/.zplug
 
 # ranger
 export RANGER_LOAD_DEFAULT_RC=FALSE
+
+# mongodb
+# export mongodb=/usr/local/mongodb
+# export PATH=$mongodb/bin:$PATH
