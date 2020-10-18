@@ -123,7 +123,7 @@ Plug 'voldikss/vim-translator'
 call plug#end()
 
 
-" ------------------------彩虹括号插件配置------------------------
+" ------------------------coc插件------------------------
 let g:coc_global_extensions = [
 	\ 'coc-gitignore',
 	\ 'coc-html',
