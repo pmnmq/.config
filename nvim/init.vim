@@ -120,6 +120,9 @@ Plug 'hdima/python-syntax'
 " 翻译插件
 Plug 'voldikss/vim-translator'
 
+Plug 'tpope/vim-surround'
+Plug 'gcmt/wildfire.vim'
+
 call plug#end()
 
 
