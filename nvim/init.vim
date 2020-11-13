@@ -73,7 +73,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 " 文件侧偏栏
-Plug 'preservim/nerdtree'
+Plug 'scrooloose/nerdtree',{'on': 'NERDTreeToggle'}
 Plug 'Xuyuanp/nerdtree-git-plugin'
 " 状态栏显示文件信息
 Plug 'vim-airline/vim-airline'
@@ -100,7 +100,7 @@ Plug 'dense-analysis/ale'
 Plug 'morhetz/gruvbox'
 Plug 'connorholyday/vim-snazzy'
 Plug 'chowie/vim-hybrid-reverse'
-Plug 'ajmwagar/vim-deus'
+Plug 'theniceboy/vim-deus'
 
 " 格式化插件
 Plug 'Chiel92/vim-autoformat'
@@ -115,13 +115,17 @@ Plug 'honza/vim-snippets'
 " 在当前单词显示下划线
 Plug 'itchyny/vim-cursorword'
 
-Plug 'hdima/python-syntax'
+Plug 'hdima/python-syntax',{'for':'python'}
 
 " 翻译插件
-Plug 'voldikss/vim-translator'
+Plug 'voldikss/vim-translator', {'on': 'TranslateW'}
 
+" 选中区域内容插件和插入括号引号插件
 Plug 'tpope/vim-surround'
 Plug 'gcmt/wildfire.vim'
+
+" 多光标插件
+Plug 'mg979/vim-visual-multi'
 
 call plug#end()
 
