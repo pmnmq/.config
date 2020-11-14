@@ -115,7 +115,7 @@ Plug 'honza/vim-snippets'
 " 在当前单词显示下划线
 Plug 'itchyny/vim-cursorword'
 
-Plug 'hdima/python-syntax',{'for':'python'}
+Plug 'hdima/python-syntax',{'for':['python', 'vim-plug']}
 
 " 翻译插件
 Plug 'voldikss/vim-translator', {'on': 'TranslateW'}
@@ -126,6 +126,9 @@ Plug 'gcmt/wildfire.vim'
 
 " 多光标插件
 Plug 'mg979/vim-visual-multi'
+
+" 图标插件
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 

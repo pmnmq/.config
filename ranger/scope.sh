@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 set -o noclobber -o noglob -o nounset -o pipefail
 IFS=$'\n'
 
@@ -259,4 +257,4 @@ handle_extension
 handle_mime "${MIMETYPE}"
 handle_fallback
 
-exit 1
+exit 1e
