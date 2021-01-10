@@ -8,11 +8,11 @@ fi
 export ZSH="/root/.oh-my-zsh"
 
 
-# ZSH_THEME="robbyrussell"
-
+ZSH_THEME="robbyrussell"
 
 plugins=(git extract)
 
+source /root/.zinit/bin/zinit.zsh
 
 alias tmux="TERM=screen-256color-bce tmux"
 
@@ -22,18 +22,8 @@ source ~/.config/zsh/env.zsh
 source /usr/local/python36/bin/virtualenvwrapper.sh
 source ~/.config/zsh/plugins.zsh
 
-# prompt pure theme
-# fpath+=$HOME/.zsh/pure
-# autoload -U promptinit; promptinit
-# prompt pure
-
 # setting theme magicmace
 # source ~/.config/zsh/magicmace.zsh
-
-
-# setting powerlevel10k theme
-ZSH_THEME="powerlevel10k/powerlevel10k"
-POWERLEVEL9K_MODE="awesome-patched"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
