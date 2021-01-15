@@ -4,10 +4,12 @@ curl -sL install-node.now.sh/lts | bash
 # wget -P /usr/src https://www.python.org/ftp/python/3.6.8/Python-3.6.8.tgz
 wget -P /usr/src https://mirrors.huaweicloud.com/python/3.6.8/Python-3.6.8.tgz
 tar -xf /usr/src/Python-3.6.8.tgz -C /usr/src
-/usr/src/Python-3.6.8/configure --prefix=/usr/local/python36
-/usr/src/Python-3.6.8/make && make install
+cd /usr/src/Python-3.6.8
+./configure --prefix=/usr/local/python36
+make && make install
 ln -s /usr/local/python36/bin/pip3.6 /usr/bin/pip36
-/usr/bin/pip36 install virtualenvwrapper
+cd
+pip36 install virtualenvwrapper
 pip3 install neovim
 mkdir ~/.zinit
 git clone --depth=1 https://github.com/zdharma/zinit.git ~/.zinit/bin
