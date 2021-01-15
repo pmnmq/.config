@@ -1,8 +1,11 @@
 apt install -y wget git gcc cmake screen python3-dev python3-pip
 apt install -y neovim ranger htop neofetch figlet
 curl -sL install-node.now.sh/lts | bash
-wget https://www.python.org/ftp/python/3.6.8/Python-3.6.8.tgz
-tar -zxvf Python-3.6.8.tgz -C /usr/local/python36
+# wget -P /usr/src https://www.python.org/ftp/python/3.6.8/Python-3.6.8.tgz
+wget -P /usr/src https://mirrors.huaweicloud.com/python/3.6.8/Python-3.6.8.tgz
+tar -xf /usr/src/Python-3.6.8.tgz -C /usr/src
+/usr/src/Python-3.6.8/configure --prefix=/usr/local/python36
+/usr/src/Python-3.6.8/make && make install
 ln -s /usr/local/python36/bin/pip3.6 /usr/bin/pip36
 /usr/bin/pip36 install virtualenvwrapper
 pip3 install neovim
