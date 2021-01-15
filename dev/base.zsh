@@ -1,4 +1,3 @@
-source ~/.config/zsh/install.sh
 apt install -y wget gcc cmake screen python3-dev python3-pip
 apt install -y neovim ranger htop neofetch figlet
 curl -sL install-node.now.sh/lts | bash
