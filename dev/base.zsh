@@ -12,6 +12,7 @@ cd /usr/src/Python-3.6.8
 ./configure --prefix=/usr/local/python36
 make && make install
 ln -s /usr/local/python36/bin/pip3.6 /usr/bin/pip36
+ln -s /usr/local/python36/bin/python3.6 /usr/bin/python36
 cd
 pip36 install virtualenvwrapper
 pip3 install neovim
