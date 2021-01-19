@@ -3,7 +3,7 @@ apt install -y neovim ranger htop neofetch figlet
 curl -sL install-node.now.sh/lts | bash
 # wget -P /usr/src https://golang.org/dl/go1.15.6.linux-amd64.tar.gz
 wget -P /usr/src https://studygolang.com/dl/golang/go1.15.6.linux-amd64.tar.gz
-tar -xzvf /usr/src/go1.15.6.linux-amd64.tar.gz /usr/local
+tar -xzvf /usr/src/go1.15.6.linux-amd64.tar.gz -C /usr/local
 mkdir -p ~/go/{src,bin,pkg}
 # wget -P /usr/src https://www.python.org/ftp/python/3.6.8/Python-3.6.8.tgz
 wget -P /usr/src https://mirrors.huaweicloud.com/python/3.6.8/Python-3.6.8.tgz
