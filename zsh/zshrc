@@ -14,7 +14,6 @@ plugins=(git extract)
 
 source /root/.zinit/bin/zinit.zsh
 
-alias tmux="TERM=screen-256color-bce tmux"
 alias c="clear"
 alias ra="ranger"
 alias s="neofetch"
