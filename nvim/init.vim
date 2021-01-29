@@ -13,22 +13,26 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 
-" ------------------------nvim基本设置------------------------
-" 键位映射
+" nvim基本设置
 " 设置LEADER键为space
+" 键位映射
 let mapleader=" "
+noremap k j
+noremap B K
+noremap , 5j
 noremap j h
 noremap i k
-noremap k j
 noremap h i
 noremap H I
 noremap I 5k
-noremap L 5j
+noremap L $
+noremap J 0
 noremap <LEADER><CR> :nohlsearch<CR>
 map s <nop>
 map S :w<CR>
 map Q :q<CR>
 map R :source $MYVIMRC<CR>
+
 
 " 搜索设置
 set hlsearch
