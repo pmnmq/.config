@@ -141,8 +141,7 @@ let g:coc_global_extensions = [
 	\ 'coc-pyright',
 	\ 'coc-python',
 	\ 'coc-snippets',
-	\ 'coc-sh',
-	\ 'coc-java',]
+	\ 'coc-sh',]
 
 
 
