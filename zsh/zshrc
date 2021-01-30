@@ -17,6 +17,9 @@ source /root/.zinit/bin/zinit.zsh
 alias c="clear"
 alias ra="ranger"
 alias s="neofetch"
+alias cs="cowsay"
+alias fl="figlet"
+alias lg="lazygit"
 
 source $ZSH/oh-my-zsh.sh
 # source ~/.config/zsh/ln.zsh
