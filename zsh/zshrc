@@ -22,11 +22,11 @@ alias fl="figlet"
 alias lg="lazygit"
 
 source $ZSH/oh-my-zsh.sh
-# source ~/.config/zsh/ln.zsh
 source ~/.config/zsh/env.zsh
 source /usr/local/python36/bin/virtualenvwrapper.sh
 source ~/.config/zsh/plugins.zsh
 source ~/.config/zsh/vi.zsh
+source ~/.config/fzf/fzf.zsh
 # setting theme magicmace
 # source ~/.config/zsh/magicmace.zsh
 
