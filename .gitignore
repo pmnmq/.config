@@ -31,3 +31,4 @@ dolphinrc
 kconf_updaterc
 
 ranger/plugins/ranger_devicons/__init__.py
+nvim/.netrwhist
