@@ -1,6 +1,6 @@
 # Go
 export GOROOT=/usr/lib/go
-export GOPATH=$HOME/go
+export GOPATH=$HOME/code/go
 export GOBIN=$GOPATH/bin
 export PATH=$GOPATH:$GOBIN:$GOROOT/bin:$PATH
 export GO111MODULE=on
@@ -32,3 +32,7 @@ export RANGER_LOAD_DEFAULT_RC=FALSE
 # mongodb
 # export mongodb=/usr/local/mongodb
 # export PATH=$mongodb/bin:$PATH
+
+# pyenv
+export PYENV_ROOT=$HOME/.pyenv
+export PATH=$PYENV_ROOT/bin:$PATH
