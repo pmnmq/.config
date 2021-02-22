@@ -17,6 +17,10 @@
 
 - neofetch中的[config.conf](./neofetch/config.conf)是neofetch的配置文件，该配置文件能控制终端中使用neofetch后输出信息
 
+## i3
+
+- [config](./i3/config)是i3的配置文件，改动很多，其中将polybar-theme的rofi启动脚本设置为了快捷键，没有再使用albert了
+
 ## notebook
 
 - notebook中的[custom.css](./notebook/custom.css)放置的是jupyter notebook启动后在WebUI中的样式配置，这个文件需要拷贝或者链接到Python的`site-package/notebook/static/custom`文件夹下
