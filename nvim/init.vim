@@ -57,6 +57,7 @@ set scrolloff=8
 syntax on
 set wrap
 set showcmd
+set relativenumber
 let &t_ut=''
 set list
 set listchars=tab:\|\ ,trail:▫
@@ -87,7 +88,13 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 " 改变vim开始界面
-Plug 'mhinz/vim-startify'
+" Plug 'mhinz/vim-startify'
+Plug 'glepnir/dashboard-nvim'
+" markdown
+Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
+
 " 彩虹括号
 Plug 'luochen1990/rainbow'
 " Plug 'vim-python/python-syntax'
@@ -145,6 +152,20 @@ let g:coc_global_extensions = [
 	\ 'coc-pyright',
 	\ 'coc-python',
 	\ 'coc-snippets',
+	\ 'coc-syntax',
+	\ 'coc-diagnostic',
+	\ 'coc-explorer',
+	\ 'coc-prettier',
+	\ 'coc-sourcekit',
+	\ 'coc-stylelint',
+	\ 'coc-tasks',
+	\ 'coc-translator',
+	\ 'coc-tslint-plugin',
+	\ 'coc-tsserver',
+	\ 'coc-vetur',
+	\ 'coc-vimlsp',
+	\ 'coc-yaml',
+	\ 'coc-yank',
 	\ 'coc-sh',]
 
 
@@ -180,6 +201,14 @@ let g:rainbow_active = 1
 
 " space + n 开启文件树
 map <LEADER>t :NERDTreeToggle<CR>
+
+
+" -----------------------startify---------------------------
+let g:startify_bookmarks = [
+	\ '~/.config/nvim/init.vim',
+	\ '~/.config/i3/config',
+	\ '~/.config/zsh/zshrc',
+	\]
 
 
 " ------------------------注释插件配置------------------------
@@ -426,6 +455,9 @@ vmap <silent> <Leader>r <Plug>TranslateRV
 
 " 按大M执行GoImports命令
 nnoremap M :GoImports<CR>
+
+" markdown
+let g:mkdp_filetypes = ['markdown']
 
 
 " ------------------------运行代码设置------------------------
