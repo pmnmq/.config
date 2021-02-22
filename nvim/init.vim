@@ -1,8 +1,12 @@
-"   ____            _ _  ____ _
-"  |  _ \ _   _    | (_)/ ___| |__  _   _ _ __
-"  | |_) | | | |_  | | | |   | '_ \| | | | '_ \
-"  |  __/| |_| | |_| | | |___| | | | |_| | | | |
-"  |_|    \__,_|\___/|_|\____|_| |_|\__,_|_| |_|
+ "                      ██    ██             ▄▄
+ "                      ▀▀    ▀▀             ██
+ " ██▄███▄  ██    ██  ████  ████     ▄█████▄ ██▄████▄ ██    ██ ██▄████▄
+ " ██▀  ▀██ ██    ██    ██    ██    ██▀    ▀ ██▀   ██ ██    ██ ██▀   ██
+ " ██    ██ ██    ██    ██    ██    ██       ██    ██ ██    ██ ██    ██
+ " ███▄▄██▀ ██▄▄▄███    ██ ▄▄▄██▄▄▄ ▀██▄▄▄▄█ ██    ██ ██▄▄▄███ ██    ██
+ " ██ ▀▀▀    ▀▀▀▀ ▀▀    ██ ▀▀▀▀▀▀▀▀   ▀▀▀▀▀  ▀▀    ▀▀  ▀▀▀▀ ▀▀ ▀▀    ▀▀
+ " ██                ████▀
+
 
 " Author: @pujichun
 
@@ -13,10 +17,14 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 
+
+
+"
 " nvim基本设置
+"
 " 设置LEADER键为space
-" 键位映射
 let mapleader=" "
+" 键位映射
 noremap k j
 noremap B K
 noremap , 5j
@@ -33,22 +41,26 @@ map S :w<CR>
 map Q :q<CR>
 map R :source $MYVIMRC<CR>
 
-
 " 搜索设置
 set hlsearch
 exec "nohlsearch"
 set ignorecase
 set smartcase
-set showmatch " 显示匹配括号
+" 显示匹配括号
+set showmatch
 set number
-set cursorline " 突出显示当前行
-set autoindent " 继承前一行的缩进方式
+" 突出显示当前行
+set cursorline
+" 继承前一行的缩进方式
+set autoindent
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set enc=utf-8 " 文件编码
+" 文件编码
+set enc=utf-8
 set fencs=utf-8,ucs-bom,shift-jis,gbk
-set ruler " 打开状态栏标尺
+" 打开状态栏标尺
+set ruler
 " 取消自动备份及产生swp文件
 set nobackup
 set nowb
@@ -64,7 +76,6 @@ set listchars=tab:\|\ ,trail:▫
 set backspace=indent,eol,start
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
-" ------------------------nvim光标设置------------------------
 " 在插入模式下将光标设置为细条
 if has("autocmd")
     au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
@@ -73,33 +84,44 @@ if has("autocmd")
 endif
 
 
-" ------------------------nvim插件------------------------
 
+
+"
+" nvim插件
+"
 call plug#begin('~/.vim/plugged')
 " 文件侧偏栏
 Plug 'scrooloose/nerdtree',{'on': 'NERDTreeToggle'}
 Plug 'Xuyuanp/nerdtree-git-plugin'
+
 " 状态栏显示文件信息
 Plug 'vim-airline/vim-airline'
+
 " 自动补全括号 引号等
 Plug 'jiangmiao/auto-pairs'
+
 " 补全插件
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" go lsp
 Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
+
 " 改变vim开始界面
 " Plug 'mhinz/vim-startify'
 Plug 'glepnir/dashboard-nvim'
+
 " markdown
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
-
 " 彩虹括号
 Plug 'luochen1990/rainbow'
+
 " Plug 'vim-python/python-syntax'
-" 注释插件
+
+" 快速注释插件
 Plug 'preservim/nerdcommenter'
+
 " 语法检查插件
 Plug 'dense-analysis/ale'
 
@@ -110,12 +132,14 @@ Plug 'dense-analysis/ale'
 Plug 'morhetz/gruvbox'
 Plug 'connorholyday/vim-snazzy'
 Plug 'chowie/vim-hybrid-reverse'
-Plug 'theniceboy/vim-deus'
 
 " 格式化插件
 Plug 'Chiel92/vim-autoformat'
+
+" python pep8风格格式化插件
 Plug 'Vimjas/vim-python-pep8-indent', { 'for' :['python', 'vim-plug'] }
 
+" 缩进高亮插件
 " Plug 'nathanaelkane/vim-indent-guides'
 
 " 代码片段
@@ -143,7 +167,11 @@ Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 
-" ------------------------coc插件------------------------
+
+
+"
+" coc插件配置
+"
 let g:coc_global_extensions = [
 	\ 'coc-gitignore',
 	\ 'coc-html',
@@ -170,8 +198,10 @@ let g:coc_global_extensions = [
 
 
 
-" ------------------------彩虹括号插件配置------------------------
 
+"
+" 彩虹括号插件配置
+"
 let g:rainbow_conf = {
 	\	'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
 	\	'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
@@ -197,13 +227,19 @@ let g:rainbow_conf = {
 let g:rainbow_active = 1
 
 
-" ------------------------文件树设置------------------------
 
+
+"
+" 文件树设置
 " space + n 开启文件树
 map <LEADER>t :NERDTreeToggle<CR>
 
 
-" -----------------------startify---------------------------
+
+
+"
+" startify
+"
 let g:startify_bookmarks = [
 	\ '~/.config/nvim/init.vim',
 	\ '~/.config/i3/config',
@@ -211,8 +247,11 @@ let g:startify_bookmarks = [
 	\]
 
 
-" ------------------------注释插件配置------------------------
 
+
+"
+" 注释插件配置
+"
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 
@@ -241,11 +280,12 @@ nmap <C-_>   <Plug>NERDCommenterToggle
 vmap <C-_>   <Plug>NERDCommenterToggle<CR>gv
 
 
-" ------------------------主题设置------------------------
 
+
+"
+" 主题设置
+"
 set background=dark
-colorscheme deus
-" deus主题设置
 set t_Co=256
 set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -255,8 +295,11 @@ colorscheme deus
 let g:deus_termcolors=256
 
 
-" ------------------------coc-nvim设置------------------------
 
+
+"
+" coc-nvim设置
+"
 " TextEdit might fail if hidden is not set.
 set hidden
 
@@ -413,8 +456,10 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 
 
-" ------------------------代码片段插件设置------------------------
 
+"
+" 代码片段插件设置
+"
 " 唤出补全代码片段
 let g:UltiSnipsExpandTrigger="<c-b>"
 " 切换到下一个需要修改的变量名
@@ -424,12 +469,20 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " 自定义代码片段的位置
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/UltiSnips']
 
-" -----------------------vim-python-pep8-indent-------------------------
+
+
+
+"
+" vim-python-pep8-indent
+"
 let g:pymode_indent = 0
 
 
-" ------------------------vim-indent-guides------------------------
 
+
+"
+" vim-indent-guides
+"
 " let g:indent_guides_guide_size = 1
 " let g:indent_guides_start_level = 2
 " let g:indent_guides_enable_on_vim_startup = 1
@@ -439,7 +492,11 @@ let g:pymode_indent = 0
 " autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
 
 
-" ------------------------翻译插件------------------------
+
+
+"
+" 翻译插件
+"
 " <Leader>t 翻译光标下的文本，在命令行回显
 " nmap <silent> <Leader>t <Plug>Translate
 " vmap <silent> <Leader>t <Plug>TranslateV
@@ -451,17 +508,28 @@ nmap <silent> <Leader>r <Plug>TranslateR
 vmap <silent> <Leader>r <Plug>TranslateRV
 
 
-" ------------------------go导入包------------------------
 
+
+"
+" go导入包
+"
 " 按大M执行GoImports命令
 nnoremap M :GoImports<CR>
 
+
+
+
+"
 " markdown
+"
 let g:mkdp_filetypes = ['markdown']
 
 
-" ------------------------运行代码设置------------------------
 
+
+"
+" 运行代码设置
+"
 nnoremap r :call CompileRun()<CR>
 func! CompileRun()
 	exec "w"
@@ -486,7 +554,7 @@ func! CompileRun()
 	elseif &filetype == 'html'
 		silent! exec "!".g:mkdp_browser." % &"
 	elseif &filetype == 'markdown'
-		exec "InstantMarkdownPreview"
+		exec "MarkdownPreview"
 	elseif &filetype == 'tex'
 		silent! exec "VimtexStop"
 		silent! exec "VimtexCompile"
