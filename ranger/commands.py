@@ -14,7 +14,7 @@ import os
 
 # You always need to import ranger.api.commands here to get the Command class:
 from ranger.api.commands import Command
-
+from ranger.core.loader import CommandLoader
 
 # Any class that is a subclass of "Command" will be integrated into ranger as a
 # command.  Try typing ":my_edit<ENTER>" in ranger!
@@ -60,3 +60,104 @@ class my_edit(Command):
         # This is a generic tab-completion function that iterates through the
         # content of the current directory.
         return self._tab_directory_content()
+
+class mkcd(Command):
+    """
+    :mkcd <dirname>
+
+    Creates a directory with the name <dirname> and enters it.
+    """
+
+    def execute(self):
+        from os.path import join, expanduser, lexists
+        from os import makedirs
+        import re
+
+        dirname = join(self.fm.thisdir.path, expanduser(self.rest(1)))
+        if not lexists(dirname):
+            makedirs(dirname)
+
+            match = re.search('^/|^~[^/]*/', dirname)
+            if match:
+                self.fm.cd(match.group(0))
+                dirname = dirname[match.end(0):]
+
+            for m in re.finditer('[^/]+', dirname):
+                s = m.group(0)
+                if s == '..' or (s.startswith('.') and not self.fm.settings['show_hidden']):
+                    self.fm.cd(s)
+                else:
+                    ## We force ranger to load content before calling `scout`.
+                    self.fm.thisdir.load_content(schedule=False)
+                    self.fm.execute_console('scout -ae ^{}$'.format(s))
+        else:
+            self.fm.notify("file/directory exists!", bad=True)
+
+
+class up(Command):
+    def execute(self):
+        if self.arg(1):
+            scpcmd = ["scp", "-r"]
+            scpcmd.extend([f.realpath for f in self.fm.thistab.get_selection()])
+            scpcmd.append(self.arg(1))
+            self.fm.execute_command(scpcmd)
+            self.fm.notify("Uploaded!")
+
+
+    def tab(self, tabnum):
+        import os.path
+        try:
+            import paramiko
+        except ImportError:
+            """paramiko not installed"""
+            return
+
+        try:
+            with open(os.path.expanduser("~/.ssh/config")) as file:
+                paraconf = paramiko.SSHConfig()
+                paraconf.parse(file)
+        except IOError:
+            """cant open ssh config"""
+            return
+
+        hosts = sorted(list(paraconf.get_hostnames()))
+        # remove any wildcard host settings since they're not real servers
+        hosts.remove("*")
+        query = self.arg(1) or ''
+        matching_hosts = []
+        for host in hosts:
+            if host.startswith(query):
+                matching_hosts.append(host)
+        return (self.start(1) + host + ":" for host in matching_hosts)
+
+class extracthere(Command):
+    def execute(self):
+        """ Extract copied files to current directory """
+        copied_files = tuple(self.fm.copy_buffer)
+
+        if not copied_files:
+            return
+
+        def refresh(_):
+            cwd = self.fm.get_directory(original_path)
+            cwd.load_content()
+
+        one_file = copied_files[0]
+        cwd = self.fm.thisdir
+        original_path = cwd.path
+        au_flags = ['-X', cwd.path]
+        au_flags += self.line.split()[1:]
+        au_flags += ['-e']
+
+        self.fm.copy_buffer.clear()
+        self.fm.cut_buffer = False
+        if len(copied_files) == 1:
+            descr = "extracting: " + os.path.basename(one_file.path)
+        else:
+            descr = "extracting files from: " + os.path.basename(
+                one_file.dirname)
+        obj = CommandLoader(args=['aunpack'] + au_flags \
+                + [f.path for f in copied_files], descr=descr, read=True)
+
+        obj.signal_bind('after', refresh)
+        self.fm.loader.add(obj)
