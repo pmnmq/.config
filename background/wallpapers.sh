@@ -7,5 +7,5 @@ do
 	RANGE=${#ALIST[*]}
 	SHOW=$(( $RANDOM % $RANGE ))
 	feh --bg-scale $WALLPAPERS/${ALIST[$SHOW]}
-	sleep 600
+	sleep 300
 done
