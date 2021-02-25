@@ -7,9 +7,11 @@
  " ██ ▀▀▀    ▀▀▀▀ ▀▀    ██ ▀▀▀▀▀▀▀▀   ▀▀▀▀▀  ▀▀    ▀▀  ▀▀▀▀ ▀▀ ▀▀    ▀▀
  " ██                ████▀
 
-
 " Author: @pujichun
 
+"
+" 检查是否存在plug.vim
+"
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
 	silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
 				\https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -26,7 +28,6 @@ endif
 let mapleader=" "
 " 键位映射
 noremap k j
-noremap B K
 noremap , 5j
 noremap j h
 noremap i k
@@ -129,6 +130,7 @@ Plug 'dense-analysis/ale'
 " Plug 'tomlion/vim-solidity'
 
 " 主题
+Plug 'theniceboy/vim-deus'
 Plug 'morhetz/gruvbox'
 Plug 'connorholyday/vim-snazzy'
 Plug 'chowie/vim-hybrid-reverse'
@@ -286,6 +288,7 @@ vmap <C-_>   <Plug>NERDCommenterToggle<CR>gv
 " 主题设置
 "
 set background=dark
+colorscheme deus
 set t_Co=256
 set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
