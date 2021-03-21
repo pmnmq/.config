@@ -75,4 +75,4 @@ git clone https://github.com/zdharma/zinit.git ~/.zinit/bin
 
 这是我的键位配置，将Esc键和Caps键进行了交换，将键盘右边的Alt键换为了Ctrl，将键盘右边的Menu键换为了Win键（i3下的Super键）
 
-![keymap](./img/IMG_9137_.png)
+![keymap](https://github.com/pujichun/img/blob/main/keymap.png?raw=true)
