@@ -42,6 +42,18 @@ map S :w<CR>
 map Q :q<CR>
 map R :source $MYVIMRC<CR>
 
+
+
+"
+" 映射窗口切换键位
+"
+noremap <C-j> <C-w>h
+noremap <C-k> <C-w>j
+noremap <C-l> <C-w>l
+noremap <C-i> <C-w>k
+
+
+
 " 搜索设置
 set hlsearch
 exec "nohlsearch"
@@ -117,6 +129,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 
 
 " 彩虹括号
 Plug 'luochen1990/rainbow'
+" Plug 'p00f/nvim-ts-rainbow'
 
 " Plug 'vim-python/python-syntax'
 
@@ -472,6 +485,11 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " 自定义代码片段的位置
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/UltiSnips']
 
+
+
+"
+" dashboard-nvim
+"
 
 
 
