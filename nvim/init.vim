@@ -248,6 +248,23 @@ let g:rainbow_active = 1
 " 文件树设置
 " space + n 开启文件树
 map <LEADER>t :NERDTreeToggle<CR>
+let NERDTreeIgnore=['.pyc', '.vscode']
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ "Unknown"   : "?"
+    \ }
+" 键位映射
+let g:NERDTreeMenuDown = 'k'
+let g:NERDTreeMapOpenSplit = 'h'
+let g:NERDTreeMenuUp = 'i'
+
 
 
 
