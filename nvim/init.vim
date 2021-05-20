@@ -121,7 +121,7 @@ Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 
 " 改变vim开始界面
 " Plug 'mhinz/vim-startify'
-Plug 'glepnir/dashboard-nvim'
+Plug 'pujichun/dashboard-nvim'
 
 " markdown
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
@@ -179,6 +179,7 @@ Plug 'mg979/vim-visual-multi'
 " 图标插件
 Plug 'ryanoasis/vim-devicons'
 
+Plug 'liuchengxu/vim-clap'
 call plug#end()
 
 
@@ -592,3 +593,19 @@ func! CompileRun()
 		:term go run .
 	endif
 endfunc
+
+let g:dashboard_custom_header =[
+	\'          ▀████▀▄▄              ▄█ ',
+	\'            █▀    ▀▀▄▄▄▄▄    ▄▄▀▀█ ',
+	\'    ▄        █          ▀▀▀▀▄  ▄▀  ',
+	\'   ▄▀ ▀▄      ▀▄              ▀▄▀  ',
+	\'  ▄▀    █     █▀   ▄█▀▄      ▄█    ',
+	\'  ▀▄     ▀▄  █     ▀██▀     ██▄█   ',
+	\'   ▀▄    ▄▀ █   ▄██▄   ▄  ▄  ▀▀ █  ',
+	\'    █  ▄▀  █    ▀██▀    ▀▀ ▀▀  ▄▀  ',
+	\'   █   █  █      ▄▄           ▄▀   ',
+	\]
+" let g:dashboard_custom_footer =
+
+let g:dashboard_default_executive ='clap'
+" let g:dashboard_custom_shortcut
