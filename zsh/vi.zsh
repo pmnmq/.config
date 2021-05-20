@@ -5,7 +5,8 @@ bindkey -M vicmd "l" vi-forward-char
 bindkey -M vicmd "j" vi-backward-char
 bindkey -M vicmd "L" vi-end-of-line
 bindkey -M vicmd "J" vi-beginning-of-line
-bindkey -M vicmd "I" up-line-or-history
+bindkey -M vicmd "i" unbound
+bindkey -M vicmd "i" up-line-or-history
 bindkey -M vicmd "k" down-line-or-history
 
 function zle-keymap-select {
