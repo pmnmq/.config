@@ -12,7 +12,8 @@ fi
 # ------------
 source "/home/pujic/.fzf/shell/key-bindings.zsh"
 
-export FZF_DEFAULT_OPTS='--bind=ctrl-t:top,change:top --bind ctrl-k:down,ctrl-i:up'
-export FZF_DEFAULT_COMMAND='fd --hidden --follow -E ".git" -E "node_modules" -E "venv" .'
+export FZF_DEFAULT_OPTS='--bind ctrl-k:down,ctrl-i:up,ctrl-t:top --preview "[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --color=always {} || highlight -O ansi -l {} || bat {}) 2> /dev/null | head -500"'
+# export FZF_DEFAULT_OPTS='--bind=ctrl-t:top,change:top --bind ctrl-k:down,ctrl-i:up'
+export FZF_DEFAULT_COMMAND='fd --hidden --follow --exclude={.git,.idea,.vscode,node_modules,build,venv,.wine,.deepinwine,.w3m,.vim,."Tencent Files",."pylint.d"} .'
 export FZF_COMPLETION_TRIGGER='\'
 export fzf_preview_cmd='[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --color=always {} || highlight -O ansi -l {} || bat {}) 2> /dev/null | head -500'
