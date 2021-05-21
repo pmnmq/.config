@@ -69,7 +69,7 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 " 文件编码
-set enc=utf-8
+set encoding=utf-8
 set fencs=utf-8,ucs-bom,shift-jis,gbk
 " 打开状态栏标尺
 set ruler
@@ -103,8 +103,8 @@ endif
 "
 call plug#begin('~/.vim/plugged')
 " 文件侧偏栏
-Plug 'scrooloose/nerdtree',{'on': 'NERDTreeToggle'}
-Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'scrooloose/nerdtree',{'on': 'NERDTreeToggle'}
+" Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " 状态栏显示文件信息
 Plug 'vim-airline/vim-airline'
@@ -143,12 +143,14 @@ Plug 'dense-analysis/ale'
 
 " 主题
 Plug 'theniceboy/vim-deus'
-Plug 'morhetz/gruvbox'
-Plug 'connorholyday/vim-snazzy'
-Plug 'chowie/vim-hybrid-reverse'
+" Plug 'morhetz/gruvbox'
+" Plug 'connorholyday/vim-snazzy'
+" Plug 'chowie/vim-hybrid-reverse'
 
 " 格式化插件
-Plug 'Chiel92/vim-autoformat'
+" Plug 'Chiel92/vim-autoformat'
+Plug 'google/vim-maktaba'
+Plug 'google/vim-codefmt'
 
 " python pep8风格格式化插件
 Plug 'Vimjas/vim-python-pep8-indent', { 'for' :['python', 'vim-plug'] }
@@ -210,7 +212,9 @@ let g:coc_global_extensions = [
 	\ 'coc-vimlsp',
 	\ 'coc-yaml',
 	\ 'coc-yank',
-	\ 'coc-sh',]
+	\ 'coc-sh',
+	\ 'coc-explorer',
+	\]
 
 
 
@@ -248,25 +252,26 @@ let g:rainbow_active = 1
 "
 " 文件树设置
 " space + n 开启文件树
-map <LEADER>t :NERDTreeToggle<CR>
-let NERDTreeIgnore=['.pyc', '.vscode']
-let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "✹",
-    \ "Staged"    : "✚",
-    \ "Untracked" : "✭",
-    \ "Renamed"   : "➜",
-    \ "Unmerged"  : "═",
-    \ "Deleted"   : "✖",
-    \ "Dirty"     : "✗",
-    \ "Clean"     : "✔︎",
-    \ "Unknown"   : "?"
-    \ }
-" 键位映射
-let g:NERDTreeMenuDown = 'k'
-let g:NERDTreeMapOpenSplit = 'h'
-let g:NERDTreeMenuUp = 'i'
-
-
+" map <LEADER>t :NERDTreeToggle<CR>
+" let NERDTreeIgnore=['.pyc', '.vscode']
+" let g:NERDTreeIndicatorMapCustom = {
+"     \ "Modified"  : "✹",
+"     \ "Staged"    : "✚",
+"     \ "Untracked" : "✭",
+"     \ "Renamed"   : "➜",
+"     \ "Unmerged"  : "═",
+"     \ "Deleted"   : "✖",
+"     \ "Dirty"     : "✗",
+"     \ "Clean"     : "✔︎",
+"     \ "Unknown"   : "?"
+"     \ }
+" " 键位映射
+" let g:NERDTreeMenuDown = 'k'
+" let g:NERDTreeMapOpenSplit = 'h'
+" let g:NERDTreeMenuUp = 'i'
+nmap tt :CocCommand explorer<CR>
+nmap tf :CocCommand explorer --preset floating<CR>
+autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 
 
 
@@ -313,6 +318,21 @@ nmap <C-_>   <Plug>NERDCommenterToggle
 vmap <C-_>   <Plug>NERDCommenterToggle<CR>gv
 
 
+let g:terminal_color_0  = '#000000'
+let g:terminal_color_1  = '#FF5555'
+let g:terminal_color_2  = '#50FA7B'
+let g:terminal_color_3  = '#F1FA8C'
+let g:terminal_color_4  = '#BD93F9'
+let g:terminal_color_5  = '#FF79C6'
+let g:terminal_color_6  = '#8BE9FD'
+let g:terminal_color_7  = '#BFBFBF'
+let g:terminal_color_8  = '#4D4D4D'
+let g:terminal_color_9  = '#FF6E67'
+let g:terminal_color_10 = '#5AF78E'
+let g:terminal_color_11 = '#F4F99D'
+let g:terminal_color_12 = '#CAA9FA'
+let g:terminal_color_13 = '#FF92D0'
+let g:terminal_color_14 = '#9AEDFE'
 
 
 "
@@ -324,10 +344,8 @@ set t_Co=256
 set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-set background=dark    " Setting dark mode
-colorscheme deus
-let g:deus_termcolors=256
-
+" set background=dark    " Setting dark mode
+" colorscheme deus
 
 
 

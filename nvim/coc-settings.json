@@ -72,5 +72,25 @@
 				}
 			}
 		}
+	},
+	// explorer
+	"explorer.file.column.indent.indentLine": true,
+	"explorer.file.showHiddenFiles": true,
+	"explorer.file.column.git.showIgnored": false,
+	"explorer.keyMappingMode": "none",
+	"explorer.buffer.showHiddenBuffers": false,
+	"explorer.width":30,
+	"explorer.icon.enableNerdfont":true,
+	"explorer.previewAction.onHover": true,
+	"explorer.keyMappings.global": {
+		"<cr>": ["expandable?", "expand", "open"],
+		"v": "open:vsplit",
+		"i": "nodePrev",
+		"k": "nodeNext",
+		"<tab>": "actionMenu",
+		"yy": "copyFile",
+		"dd": "cutFile",
+		"pp": "pasteFile"
 	}
 }
+
