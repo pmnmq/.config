@@ -168,7 +168,7 @@ Plug 'itchyny/vim-cursorword'
 Plug 'hdima/python-syntax',{'for':['python', 'vim-plug']}
 
 " 翻译插件
-Plug 'voldikss/vim-translator', {'on': 'TranslateW'}
+" Plug 'voldikss/vim-translator', {'on': 'TranslateW'}
 
 " 选中区域内容插件和插入括号引号插件
 Plug 'tpope/vim-surround'
@@ -179,6 +179,10 @@ Plug 'mg979/vim-visual-multi'
 
 " 图标插件
 Plug 'ryanoasis/vim-devicons'
+
+" 忘记sudo vim的时候使用:sw
+Plug 'lambdalisue.suda.vim'
+
 
 Plug 'liuchengxu/vim-clap'
 Plug 'airblade/vim-gitgutter'
@@ -214,6 +218,7 @@ let g:coc_global_extensions = [
 	\ 'coc-yank',
 	\ 'coc-sh',
 	\ 'coc-explorer',
+	\ 'coc-translator'
 	\]
 
 
@@ -285,6 +290,13 @@ let g:startify_bookmarks = [
 	\]
 
 
+"
+" coc-translator
+"
+nmap <Leader>t <Plug>(coc-translator-p)
+vmap <Leader>t <Plug>(coc-translator-pv)
+nmap <Leader>r <Plug>(coc-translator-r)
+vmap <Leader>r <Plug>(coc-translator-rv)
 
 
 "
@@ -547,22 +559,6 @@ let g:pymode_indent = 0
 " let g:indent_guides_auto_colors = 0
 " autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
 " autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
-
-
-
-
-"
-" 翻译插件
-"
-" <Leader>t 翻译光标下的文本，在命令行回显
-" nmap <silent> <Leader>t <Plug>Translate
-" vmap <silent> <Leader>t <Plug>TranslateV
-" Leader>w 翻译光标下的文本，在窗口中显示
-nmap <silent> <Leader>w <Plug>TranslateW
-vmap <silent> <Leader>w <Plug>TranslateWV
-" Leader>r 替换光标下的文本为翻译内容
-nmap <silent> <Leader>r <Plug>TranslateR
-vmap <silent> <Leader>r <Plug>TranslateRV
 
 
 
