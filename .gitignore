@@ -47,3 +47,7 @@ QtProject.conf
 
 ranger/plugins/ranger_devicons/__init__.py
 nvim/.netrwhist
+
+jesseduffield/lazygit/state.yml
+
+nvim/
