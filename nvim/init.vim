@@ -183,6 +183,7 @@ Plug 'ryanoasis/vim-devicons'
 " 忘记sudo vim的时候使用:sw
 Plug 'lambdalisue/suda.vim'
 
+" 根据符号对齐
 Plug 'junegunn/vim-easy-align'
 
 Plug 'liuchengxu/vim-clap'
@@ -298,6 +299,17 @@ nmap <Leader>t <Plug>(coc-translator-p)
 vmap <Leader>t <Plug>(coc-translator-pv)
 nmap <Leader>r <Plug>(coc-translator-r)
 vmap <Leader>r <Plug>(coc-translator-rv)
+
+
+"
+" vim-easy-align
+"
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
 
 
 "
