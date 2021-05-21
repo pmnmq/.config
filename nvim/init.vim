@@ -181,7 +181,7 @@ Plug 'mg979/vim-visual-multi'
 Plug 'ryanoasis/vim-devicons'
 
 " 忘记sudo vim的时候使用:sw
-Plug 'lambdalisue.suda.vim'
+Plug 'lambdalisue/suda.vim'
 
 Plug 'junegunn/vim-easy-align'
 
