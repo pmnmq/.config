@@ -179,6 +179,7 @@ Plug 'mg979/vim-visual-multi'
 Plug 'ryanoasis/vim-devicons'
 
 Plug 'liuchengxu/vim-clap'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 
