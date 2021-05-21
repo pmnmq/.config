@@ -155,6 +155,9 @@ Plug 'google/vim-codefmt'
 " python pep8风格格式化插件
 Plug 'Vimjas/vim-python-pep8-indent', { 'for' :['python', 'vim-plug'] }
 
+" 顶栏
+Plug 'mg979/vim-xtabline'
+
 " 缩进高亮插件
 " Plug 'nathanaelkane/vim-indent-guides'
 
@@ -220,7 +223,8 @@ let g:coc_global_extensions = [
 	\ 'coc-yank',
 	\ 'coc-sh',
 	\ 'coc-explorer',
-	\ 'coc-translator'
+	\ 'coc-translator',
+	\ 'coc-diagnostic'
 	\]
 
 
@@ -276,6 +280,8 @@ let g:rainbow_active = 1
 " let g:NERDTreeMenuDown = 'k'
 " let g:NERDTreeMapOpenSplit = 'h'
 " let g:NERDTreeMenuUp = 'i'
+
+"explorer
 nmap tt :CocCommand explorer<CR>
 nmap tf :CocCommand explorer --preset floating<CR>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
@@ -548,11 +554,6 @@ let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/UltiSnips']
 
 
 
-"
-" dashboard-nvim
-"
-
-
 
 "
 " vim-python-pep8-indent
@@ -638,6 +639,11 @@ func! CompileRun()
 	endif
 endfunc
 
+
+
+"
+" dashboard-nvim
+"
 let g:dashboard_custom_header =[
 	\'          ▀████▀▄▄              ▄█ ',
 	\'            █▀    ▀▀▄▄▄▄▄    ▄▄▀▀█ ',
@@ -650,6 +656,5 @@ let g:dashboard_custom_header =[
 	\'   █   █  █      ▄▄           ▄▀   ',
 	\]
 " let g:dashboard_custom_footer =
-
 let g:dashboard_default_executive ='clap'
 " let g:dashboard_custom_shortcut
