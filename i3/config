@@ -78,7 +78,7 @@ bindsym $mod+c exec google-chrome-stable
 # open vscode
 bindsym $mod+Shift+v exec code
 
-bindsym $mod+m exec ~/.config/polybar/blocks/scripts/launcher.sh
+bindsym $mod+m exec ~/.config/rofi/launcher.sh
 
 # kill focused window
 bindsym $mod+Shift+q kill
