@@ -18,7 +18,7 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #222
+background = #D93d3c3b
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #b6a49b
@@ -33,16 +33,16 @@ width = 100%
 height = 35
 ;offset-x = 1%
 ;offset-y = 1%
-radius = 10.0
+radius = 0.0
 fixed-center = false
 
 background = ${colors.background}
-foreground = ${colors.foreground}
+; foreground = ${colors.foreground}
 
 line-size = 0
 line-color = #f00
 
-border-size = 4
+border-size = 0
 border-color = #00000000
 
 padding-left = 1
@@ -126,14 +126,14 @@ type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
-label-mode-padding = 2
-label-mode-foreground = #000
+label-mode-padding = 1
+label-mode-foreground = ${colors.foreground}
 label-mode-background = ${colors.primary}
-label-focused = %index%
-label-focused-background = ${colors.background-alt}
+label-focused = %name%
+label-focused-background = #FF616D
 label-focused-underline= ${colors.primary}
 label-focused-padding = 2
-label-unfocused = %index%
+label-unfocused = %name%
 label-unfocused-padding = 2
 label-visible = %index%
 label-visible-background = ${self.label-focused-background}
