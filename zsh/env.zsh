@@ -3,7 +3,6 @@ export GOROOT=/usr/lib/go
 export GOPATH=$HOME/code/go
 export GOBIN=$GOPATH/bin
 export PATH=$GOPATH:$GOBIN:$GOROOT/bin:$PATH
-export GO111MODULE=on
 export GOPROXY=https://goproxy.cn
 
 # Python VirtualEnvWrapper
@@ -38,3 +37,4 @@ export PYENV_ROOT=$HOME/.pyenv
 export PATH=$PYENV_ROOT/bin:$PATH
 
 export PATH=$HOME/.local/bin:$PATH
+
