@@ -5,18 +5,18 @@
 export ZSH="/home/pujic/.oh-my-zsh"
 
 
-ZSH_THEME="my"
+ZSH_THEME="nebula"
 
 plugins=(git extract)
 
-source /home/pujic/.zinit/bin/zinit.zsh
+source /home/pujic/.zi/bin/zi.zsh
 source ~/.config/zsh/aliases.zsh
 source $ZSH/oh-my-zsh.sh
 source ~/.config/zsh/env.zsh
 # source /usr/local/python36/bin/virtualenvwrapper.sh
 source ~/.config/zsh/plugins.zsh
 source ~/.config/zsh/vi.zsh
-source ~/.config/zsh/fzf.zsh
+# source ~/.config/zsh/fzf.zsh
 #
 # source ~/.config/zsh/magicmace.zsh
 
@@ -24,8 +24,8 @@ source ~/.config/zsh/fzf.zsh
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # pyenv
-if command -v pyenv 1>/dev/null 2>&1; then
- eval "$(pyenv init -)"
-fi
-eval "$(pyenv virtualenv-init -)"
+# if command -v pyenv 1>/dev/null 2>&1; then
+#  eval "$(pyenv init -)"
+# fi
+# eval "$(pyenv virtualenv-init -)"
 
