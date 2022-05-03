@@ -1,13 +1,12 @@
 bindkey -v
-bindkey -M vicmd "h" vi-insert
-bindkey -M vicmd "H" vi-insert-bol
+bindkey -M vicmd "i" vi-insert
+bindkey -M vicmd "I" vi-insert-bol
 bindkey -M vicmd "l" vi-forward-char
-bindkey -M vicmd "j" vi-backward-char
+bindkey -M vicmd "h" vi-backward-char
 bindkey -M vicmd "L" vi-end-of-line
 bindkey -M vicmd "J" vi-beginning-of-line
-bindkey -M vicmd "i" unbound
-bindkey -M vicmd "i" up-line-or-history
-bindkey -M vicmd "k" down-line-or-history
+bindkey -M vicmd "k" up-line-or-history
+bindkey -M vicmd "j" down-line-or-history
 
 function zle-keymap-select {
 	if [[ ${KEYMAP} == vicmd  ]] || [[ $1 = 'block'  ]]; then
