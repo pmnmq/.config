@@ -29,9 +29,9 @@ gui:
 reporting: "off"
 keybinding:
     universal:
-        prevItem-alt: 'i'
-        nextItem-alt: 'k'
-        prevBlock-alt: 'j'
+        prevItem-alt: 'k'
+        nextItem-alt: 'j'
+        prevBlock-alt: 'h'
         nextBlock-alt: 'l'
     files:
         ignoreFile: 'I'
