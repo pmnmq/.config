@@ -1,5 +1,5 @@
 # Go
-export GOROOT=/usr/lib/go
+export GOROOT=/usr/local/go
 export GOPATH=$HOME/code/go
 export GOBIN=$GOPATH/bin
 export PATH=$GOPATH:$GOBIN:$GOROOT/bin:$PATH
